@@ -15,6 +15,7 @@ randomBtn.addEventListener('click', () => {
 
 async function handleData() {
     const response = await fetch(url);
+    joke.classList.remove('fade')
 
     if (!response.ok) {
         joke.textContent = 'sorry server error'
@@ -27,4 +28,5 @@ async function handleData() {
 
 function handleDisplay(data) {
     joke.textContent = data.joke
+    joke.classList.add('fade')
 }
